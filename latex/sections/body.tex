@@ -161,4 +161,70 @@ And to check if our work is correct, all we have to do is to multiply the length
 \end{align*}
 
 \subsection*{Generalised Exact Algebraic Solutions}
-Now that we defined the length and width of $A_0$, creating an expression or function for the length and width of any subsequent $A_n$ is trivial:
+Now that we defined the length and width of $A_0$, creating an expression or function for the length and width of any subsequent $A_n$ is trivial. The solutions for $L_n$ and $W_n$ can be represented as geometric sequences of the form $a_{n} = a \times r^{n - 1}$, where $r = \frac{1}{\sqrt{2}}$ as each subsequent smaller paper size is effectively divided by the aspect ratio:
+
+\begin{align*}
+  L_n &= \sqrt[4]{2} \times \left(\frac{1}{\sqrt{2}}\right)^{n} \\
+  W_n &= \frac{1}{\sqrt[4]{2}} \times \left(\frac{1}{\sqrt{2}}\right)^{n}
+\end{align*}
+
+\noindent
+For the purpose of generating the required table of lengths and widths, we will represent those expressions as functions instead:
+
+\begin{align*}
+  L(n) &= \sqrt[4]{2} \times \left(\frac{1}{\sqrt{2}}\right)^{n} \\
+  W(n) &= \frac{1}{\sqrt[4]{2}} \times \left(\frac{1}{\sqrt{2}}\right)^{n}
+\end{align*}
+
+\subsection*{Generated Table of Values for $A_0$ --- $A_4$}
+Now that we have the functional form of the sequence notation, we can fulfill part 1 and 2 of the assignment by generating a table of the exact and approximative magnitudes of the length and width.
+
+\noindent
+Note that, in order to save space in the table, we will not use the pretty radical notation of the terms, but rather the more compact (and arguablly, less pretty) exponent notation:
+
+\begin{align*}
+  L_n = \sqrt[4]{2} \times \left(\frac{1}{\sqrt{2}}\right)^{n} &=
+  2^{\frac{1}{4} - \frac{n}{2}}\\
+  W_n = \frac{1}{\sqrt[4]{2}} \times \left(\frac{1}{\sqrt{2}}\right)^{n} &=
+  2^{-\frac{1}{4} - \frac{n}{2}}\\
+\end{align*}
+
+\subsubsection*{Table of Exact Values\footnote{Note that the numbers following the $2$ are exponents, although the lack of space in the table can make them look like regular terms. For example, under the length column for $A_2$, the entry $2^{-\frac{3}{4}}$ reads "two to the power of negative three over four". Please don't confuse the small numbering with regular terms!}}
+\begin{table}[H]
+  \centering\makegapedcells
+  \begin{tabular}{@{}llll@{}}
+    \toprule
+    Paper & Length (\si{\meter}) & Width (\si{\meter}) & Area (\si{\meter\squared}) \\ \midrule
+    $A_0$ & $2^{\frac{1}{4}}$     & $2^{-\frac{1}{4}}$  & $1$     \\
+    $A_1$ & $2^{-\frac{1}{4}}$    & $2^{-\frac{3}{4}}$  & $\frac{1}{2}$     \\
+    $A_2$ & $2^{-\frac{3}{4}}$    & $2^{-\frac{5}{4}}$  & $\frac{1}{4}$     \\
+    $A_3$ & $2^{-\frac{5}{4}}$    & $2^{-\frac{7}{4}}$  & $\frac{1}{8}$     \\
+    $A_4$ & $2^{-\frac{7}{4}}$    & $2^{-\frac{9}{4}}$  & $\frac{1}{16}$    \\
+    $A_n$ & $2^{\frac{1}{4} - \frac{n}{2}}$    & $2^{-\frac{1}{4} - \frac{n}{2}}$  & $\frac{1}{2^n}$    \\
+    \bottomrule
+  \end{tabular}
+  \caption{Exact (algebraic) values for any given $A_n$}
+  \label{tab:exact}
+\end{table}
+
+\noindent
+Note that I have simplified the values to their simplest exponent form.
+
+\subsubsection*{Table of Approximative Values}
+\begin{table}[H]
+  \centering\makegapedcells
+  \begin{tabular}{@{}llll@{}}
+    \toprule
+    Paper & Length (\si{\meter}) & Width (\si{\meter}) & Area (\si{\meter\squared}) \\ \midrule
+    $A_0$ & $1.1892$       & $0.8408$      & $1$      \\
+    $A_1$ & $0.8408$       & $0.5946$      & $0.5$    \\
+    $A_2$ & $0.5946$       & $0.4204$      & $0.25$   \\
+    $A_3$ & $0.4204$       & $0.2973$      & $0.125$  \\
+    $A_4$ & $0.2973$       & $0.2102$      & $0.0625$ \\ \bottomrule
+  \end{tabular}
+  \caption{Approximate (numerical) values for any given $A_n$}
+  \label{tab:approx}
+\end{table}
+
+\noindent
+Note that the figures are truncated to 3 decimal places.
