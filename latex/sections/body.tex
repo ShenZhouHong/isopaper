@@ -233,9 +233,33 @@ Note that the figures are truncated to 3 decimal places.
 As the final part of the assignment, we are tasked to calculate a "scaling factor" that allows us to easily convert between a given $A_n$ to $A_m$. A scaling factor is a number that we multiply the sides of the paper by, in order to reach a bigger or smaller sized paper. In order to do this, we use the aspect ratio $\sqrt{2}$, converted to a percentage. I will demonstrate this method as well as generate a table with percentage conversions as required.
 
 \subsection*{Calculating Scaling Factor for arbitary $A_n$ to $A_m$}
-Recall that the aspect ratio is calculated as $\sqrt{2}$. Therefore, to move "up" a paper size (e.g. from $A_n$ to $A_{n - 1}$), the given paper size is multiplied by $\sqrt{2}$. Likewise, to move "down" a paper size, the given paper size is divided by the same aspect ratio. Generalising towards a function for converting arbitary $A_n$ to $A_m$: 
+Recall that the aspect ratio is calculated as $\sqrt{2}$. Therefore, to move "up" a paper size (e.g. from $A_n$ to $A_{n - 1}$), the given paper size is multiplied by $\sqrt{2}$. Likewise, to move "down" a paper size, the given paper size is divided by the same aspect ratio. Generalising towards an expression for finding the scaling factor $s$ of arbitary conversions from $A_n$ to $A_m$:
+
+\begin{align*}
+  s = 1 \times \left(\sqrt{2}\right)^{m - n}
+\end{align*}
+
+\noindent
+This expression does not give us the percentage scaling factor, of course. In order to find that, we simply have to modify it slightly:
+
+\begin{align*}
+  s = 100 \times \left(\sqrt{2}\right)^{m - n}
+\end{align*}
+
+\noindent
+As you can see, now given an arbitary $A_n$ and $A_m$, we can easily find the percentage scale factor:
+
+\begin{align*}
+  A_2 &\rightarrow A_5 \\
+  n &= 2 \\
+  m &= 5 \\
+  s &= 100 \times \left(\sqrt{2}\right)^{5 - 2} \\
+  s &\approx 282.84 \%
+\end{align*}
 
 \subsection*{Scaling Factor Table}
+Hence, using the above expression we can easily generate a table for scale factors. Note: I generated the first row of values by hand, but it was extremely tedious and time-consuming, so I ended up filling the rest of the rows with existing data. See endpage for attribution info.
+
 \begin{table}[h]
 \centering\makegapedcells
 \begin{tabular}{@{}lllllllll@{}}
