@@ -228,3 +228,28 @@ Note that I have simplified the values to their simplest exponent form.
 
 \noindent
 Note that the figures are truncated to 3 decimal places.
+
+\section*{Scaling Factor (e.g. Aspect Ratio) In Percentage}
+As the final part of the assignment, we are tasked to calculate a "scaling factor" that allows us to easily convert between a given $A_n$ to $A_m$. A scaling factor is a number that we multiply the sides of the paper by, in order to reach a bigger or smaller sized paper. In order to do this, we use the aspect ratio $\sqrt{2}$, converted to a percentage. I will demonstrate this method as well as generate a table with percentage conversions as required.
+
+\subsection*{Calculating Scaling Factor for arbitary $A_n$ to $A_m$}
+Recall that the aspect ratio is calculated as $\sqrt{2}$. Therefore, to move "up" a paper size (e.g. from $A_n$ to $A_{n - 1}$), the given paper size is multiplied by $\sqrt{2}$. Likewise, to move "down" a paper size, the given paper size is divided by the same aspect ratio. Generalising towards a function for converting arbitary $A_n$ to $A_m$: 
+
+\subsection*{Scaling Factor Table}
+\begin{table}[h]
+\centering\makegapedcells
+\begin{tabular}{@{}lllllllll@{}}
+\toprule
+Size & A0     & A1    & A2    & A3    & A4    & A5    & A6      & A7      \\ \midrule
+A0   & 100\%  & 71\%  & 50\%  & 35\%  & 25\%  & 18\%  & 12.50\% & 8.80\%  \\
+A1   & 141\%  & 100\% & 71\%  & 50\%  & 35\%  & 25\%  & 18\%    & 12.50\% \\
+A2   & 200\%  & 141\% & 100\% & 71\%  & 50\%  & 35\%  & 25\%    & 18\%    \\
+A3   & 283\%  & 200\% & 141\% & 100\% & 71\%  & 50\%  & 35\%    & 25\%    \\
+A4   & 400\%  & 283\% & 200\% & 141\% & 100\% & 71\%  & 50\%    & 35\%    \\
+A5   & 566\%  & 400\% & 283\% & 200\% & 141\% & 100\% & 71\%    & 50\%    \\
+A6   & 800\%  & 566\% & 400\% & 283\% & 200\% & 141\% & 100\%   & 71\%    \\
+A7   & 1132\% & 800\% & 566\% & 400\% & 283\% & 200\% & 141\%   & 100\%   \\ \bottomrule
+\end{tabular}
+\caption{Scale Factors for Conversions between arbitrary $A_n$ to $A_m$. }
+\label{tab:scale-factor}
+\end{table}
