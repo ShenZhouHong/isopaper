@@ -85,7 +85,7 @@ Originally, I hoped that somehow the terms would cancel out and I would be able 
 \end{align*}
 
 \noindent
-Do you recall how in the Lecture, we were told that one of the properties of the A-series paper, was how each time you fold it in half it preserves the proportions of the previous paper? This is a property that is unique to the ISO 216 paper, if you take a U.S. Letter paper and fold it in half, every time you fold it you end up with a slightly different rectangle. Now, there is only one way that this property can happen --- namely that the aspect ratio of each subsequent halve must be the same, e.g $R_{n} = R_{n + 1} = R_{n + 2}$ for $n \to \infty$. Therefore:
+Do you recall how in the Lecture, we were told that one of the properties of the A-series paper, was how each time you fold it in half it preserves the proportions of the previous paper? This is a property that is unique to the ISO 216 paper, if you take a U.S. Letter paper and fold it in half, every time you fold it you end up with a slightly different rectangle. Now, there is only one way that this property can happen --- namely that the aspect ratio of each subsequent halve must be the same, e.g $R_{n} = R_{n + 1} = R_{n + 2}$ for $n \to \infty$ where the aspect ratio is $1:R_{n}$ Therefore:
 
 \begin{align*}
   R_{n + 1} &= \frac{2}{R_{n}} = R_{n}
@@ -102,14 +102,60 @@ Now we have the simple numerical solution that I was looking for! We can find th
 \end{align*}
 
 \noindent
-Now that we found the aspect ratio, generating a sequence of lengths and widths becomes a trivial process involving the aspect ratio, where $L:W::1:\sqrt{2}$. I will demonstrate the work here:
+Therefore, the aspect ratio of the ISO 216 A-series paper is $1:\sqrt{2}$. What does this mean? It means the ratio of the length to the width of the paper is that of $1:\sqrt{2}$, or expressed in Euclidean terms:\footnote{The Euclidean continuous proportion reads: "As $L_n$ is to $W_n$, in the manner of $1$ to $\sqrt{2}$".}
 
 \begin{align*}
-  A_{n} &= L_{n} \times W_{n} = 1 \\
-      1 &= L_{n} \times \left(L_{n} \times \frac{1}{\sqrt{2}}\right) \\
-      1 &= \frac{\left(L_{n}\right)^2}{\sqrt{2}} \\
-  \sqrt{2} &= \left(L_{n}\right)^2 \\
-  2 &= L_{n}
+  L_n:W_n::1:\sqrt{2}
 \end{align*}
 
-\subsection*{The Scaling Factor of Conversions}
+\section*{Exact Algebraic Solutions to Lengths and Widths}
+Now that we have laid the required groundwork in place, we can find the exact (and numerical approximations) solutions of the length and width for any arbitary $A_n$. This is done using the aspect ratio we discovered in the previous section.
+
+\subsection*{Exact Algebraic Solution for $L_0$, $W_0$}
+First, in order to create an expression that will find the $L_n$, $W_n$ for any $A_n$, we must find the $L_0$, $W_0$ of $A_0$. Given $A_0 = L_0 \times W_0$, and that $A_0 = 1$ (as by definition), a system of simulatneous equations of the 2nd order can be used to find the exact algebraic solutions to $L_0$, $W_0$:
+
+\begin{align*}
+  \begin{cases}
+    L_0 \times W_0 &= 1 \\
+    W_0 \times \sqrt{2} &= L_0
+  \end{cases}
+\end{align*}
+
+\noindent
+Note that $W_0 \times \sqrt{2} = L_0$ holds true due to the aspect ratio, as we discussed in the previous section. Hence, to solve for $W_0$, we substitute $L_0$ from the 2nd equation in the system:
+
+\begin{align*}
+  W_0 \times \sqrt{2} \times W_0 &= 1 \\
+  \left(W_0\right)^2 \times \sqrt{2} &=1 \\
+  \left(W_0\right)^2 &= \frac{1}{\sqrt{2}} \\
+  W_0 &= \sqrt{\frac{1}{\sqrt{2}}} \\
+  &= \left(2^{-\frac{1}{2}}\right)^{\frac{1}{2}} \\
+  &= 2^{-\frac{1}{4}} \\
+  &= \frac{1}{\sqrt[4]{2}}
+\end{align*}
+
+\noindent
+With $W_0 = \frac{1}{\sqrt[4]{2}}$, finding the solution for $L_0$ is trivial:
+
+\begin{align*}
+  L_0 \times \frac{1}{\sqrt[4]{2}} &= 1 \\
+  \frac{L_0}{1} \times \frac{1}{\sqrt[4]{2}} &= 1 \\
+  \frac{\sqrt[4]{2}}{\sqrt[4]{2}} &= 1 \\
+  L_0 &= \sqrt[4]{2}
+\end{align*}
+
+\noindent
+Therefore, we now know the length and width for $A_0$, namely:
+
+\begin{align*}
+  L_0 &= \sqrt[4]{2} \\
+  W_0 &= \frac{1}{\sqrt[4]{2}} \\
+\end{align*}
+
+\noindent
+And to check if our work is correct, all we have to do is to multiply the length and the width together, and check if they give us an exact integer solution of $1\si{\meter\squared}$ for $A_0$'s area:
+
+\begin{align*}
+  L_0 \times W_0 &= 1 \\
+  \sqrt[4]{2} \times \frac{1}{\sqrt[4]{2}} &= 1
+\end{align*}
